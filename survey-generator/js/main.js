@@ -19,7 +19,7 @@ function getSurveyQuestion() {
 	// Add sort by orderand SDK type for filter
 	var filter = {sort_desc: 'order', type: typeSDK};
 	// Get Survey Question by class with filter
-	QB.data.list("SurveyQuestion", filter, function(err, result){
+	QB.data.list(QUESTIONS_CLASS_NAME, filter, function(err, result){
 		if (err) {
 			console.log(err);
 		} else {
@@ -34,7 +34,7 @@ function getSurveyQuestion() {
 			}
 
 			// Adds a buttom "NEXT" which show popup window confirmation
-			$('.co_form').append('<button id="co_next" type="button" value="NEXT" class="btn btn-lg col-xs-4 col-xs-offset-4" data-toggle="modal" data-target=".bs-example-modal-md"">NEXT</button>');
+			$('.co_form').append('<button id="co_next" type="button" value="NEXT" class="btn btn-lg col-xs-4 col-xs-offset-4" data-toggle="modal" data-target=".bs-example-modal-md">NEXT</button>');
 
 			// Remove the check from the choices, if the alternative text
 			$('.co_text_answer.for_other').on("click", function() {
@@ -79,14 +79,14 @@ function showSurveyQuestion(question, answers, alternative, j) {
 			surveyHtml.append(textHtml);
 		}
 	}
-
 }
 
 // Submit Survey Answer
 function submitSurveyAnswer() {
 	var coName = $('#co_name').val().trim(),
 			coEmail = $('#co_email').val().trim(),
-			answerArray = [];
+			answerArray = [],
+			toNext;
 
 	// Not to send if the fields are empty
 	if (coName === '' && coEmail === '') {
@@ -98,19 +98,30 @@ function submitSurveyAnswer() {
 	} else {
 		// Building array from answers
 		$('.co_survey').each(function(i, elem) {
-			var answerNumber = i+1+') ',
-					selectedString = $(elem).children('div.co_checkbox').children('input.co_switch:checked').next('label.co_check').text(),
+			var selectedString = $(elem).children('div.co_checkbox').children('input.co_switch:checked').next('label.co_check').text(),
 					writtenString = $(elem).children('textarea.co_text_answer').val();
 
-			answerString = (writtenString === undefined) ? selectedString : writtenString;
-			readyAnswer = answerNumber + answerString;
-			answerArray.push(readyAnswer);
+			answerString = (writtenString === undefined || '') ? selectedString : (selectedString === '') ? writtenString : selectedString;
+			if (answerString === '') {
+				alert('Please answer all questions');
+				toNext = false;
+				return false;
+			} else {
+				toNext = true;
+			}
+			answerArray.push(answerString);
 		});
-		// Sends the information for create Survey Answer
-		createSurveyAnswer(coName, coEmail, answerArray);
+
+		if (toNext === false) {
+			alert('Please answer all questions');
+		} else {
+			// Sends the information for create Survey Answer
+			$('#processLoader').fadeIn(400);
+			createSurveyAnswer(coName, coEmail, answerArray);
+		}
+
 		// Close popup and show loader animation while sending information
 		$('#co_submit').attr('data-dismiss', 'modal');
-		$('#processLoader').fadeIn(400);
 	}
 }
 
@@ -125,7 +136,7 @@ function createSurveyAnswer(coName, coEmail, answerArray) {
 	};
 
 	// Create recorde in "SurveyAnswer" class
-	QB.data.create("SurveyAnswer", newData, function(err, res){
+	QB.data.create(ANSWERS_CLASS_NAME, newData, function(err, res){
 		if (err) {
 			console.log(err);
 		} else {

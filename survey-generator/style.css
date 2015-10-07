@@ -490,7 +490,7 @@ html,body {height: 100% !important;}
   height: 45px !important;
 }
 
-#coModalLabel {text-align: center;}
+#coModalLabel, #errModalLabel {text-align: center;}
 
 #co_submit {
   background-color: #FF4236;

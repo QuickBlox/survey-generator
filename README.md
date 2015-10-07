@@ -1,3 +1,2 @@
-<<<<<<< HEAD
 QuickBlox Survey Generator
 =======

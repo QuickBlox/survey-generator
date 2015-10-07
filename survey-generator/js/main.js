@@ -23,6 +23,7 @@ function getSurveyQuestion() {
 		if (err) {
 			console.log(err);
 		} else {
+			console.log(result);
 			// Add header for content
 			$('.co_form').append('<h2 class="co_main_h">Product feedback survey</h2>');
 
@@ -38,7 +39,6 @@ function getSurveyQuestion() {
 			// Remove the check from the choices, if the alternative text
 			$('.co_text_answer.for_other').on("click", function() {
 				var childArr = $(this).siblings('div.co_checkbox');
-				console.log(childArr.length);
 				for (var i=childArr.length; i > 0; i--) {
 					var childIs = childArr[childArr.length-i];
 					$(childIs).children('input')[0].checked = false;

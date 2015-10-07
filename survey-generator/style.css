@@ -5,8 +5,16 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,a {font-family: 'Open Sans', sans-serif; 
 h1,h2,h3,h4,h5,h6 {font-weight: 600;}
 a, a:focus, a:hover {text-decoration: none !important;}
 ul, ol {margin-bottom: 0px !important;}
-html,body {height: 100% !important;}
 .wrapper {position: relative; min-height: 100%;}
+
+html {
+    position: relative;
+    min-height: 100%;
+    display: block;
+}
+body {
+  padding-bottom: 255px;
+}
 
 #header-container {
   background-color: #41CC44;
@@ -150,12 +158,9 @@ html,body {height: 100% !important;}
   padding-bottom: 20px;
 }
 
-#footer.tobottom {
+#footer {
   position: absolute;
   bottom: 0;
-}
-
-#footer {
   width: 100%;
   background-color: #F2F2F2;
   margin-top: 25px;
@@ -241,6 +246,7 @@ html,body {height: 100% !important;}
 
 /*   Media sreen with width 768px - 992px   */
 @media (max-width: 992px) and (min-width: 768px) {
+    body {padding-bottom: 280px;}
     .s-submenu-head {height: 35px; line-height: 35px;}
     .s-bar-submenu {padding-left: 15px;}
     .s-submenu-head>a {padding-left: 5px;}
@@ -252,12 +258,13 @@ html,body {height: 100% !important;}
 
 /*   Media sreen with max-width 768px   */
 @media (max-width: 767px) {
+    body {padding-bottom: 435px;}
     #shadow-wrap {
       position: fixed;
       background: #000000;
       opacity: 0.4;
       z-index: 3;
-      width: 100%;
+      width: 105%;
       height: 100%;
       display: none;
       overflow-y: scroll;
@@ -270,7 +277,6 @@ html,body {height: 100% !important;}
     .footer-menu {display: inline-block; text-align: center; margin-top: 20px;}
     .enterprise-queries-wrap {text-align: center;  margin-top: 20px;}
     body, html {
-      height: 100%;
       overflow-x: hidden;
     }
     .mob-container {
@@ -465,7 +471,7 @@ html,body {height: 100% !important;}
 } #co_next:hover {background-color: #CF3424}
 
 #processLoader {
-  margin: 100px auto;
+  margin: 80px auto;
   width: 128px;
   height: 128px;
 }

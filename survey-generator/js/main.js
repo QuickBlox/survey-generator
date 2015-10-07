@@ -9,8 +9,7 @@ QB.createSession(QBUser, function(err, result){
 		getSurveyQuestion();
 
 		// Show loader animation while content is loading
-		$('#processLoader').delay(200).fadeOut(500);
-		$('#footer').removeClass('tobottom');
+		$('#processLoader').delay(0).fadeOut(0);
 	}
 });
 
@@ -116,7 +115,7 @@ function submitSurveyAnswer() {
 			alert('Please answer all questions');
 		} else {
 			// Sends the information for create Survey Answer
-			$('#processLoader').fadeIn(400);
+			$('#processLoader').fadeIn(0);
 			createSurveyAnswer(coName, coEmail, answerArray);
 		}
 
@@ -142,9 +141,8 @@ function createSurveyAnswer(coName, coEmail, answerArray) {
 		} else {
 			console.log(res);
 			// Remove loading animation and show "Thank You!"
-			$('#processLoader').delay(200).fadeOut(500);
+			$('#processLoader').delay(0).fadeOut(0);
 			$('.co_form').html('<h1 class="co_finish">Thank You!</h1>');
-			$('#footer').addClass('tobottom');
 		}
 	});
 }

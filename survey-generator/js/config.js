@@ -10,3 +10,10 @@ var QBUser = {
 };
 
 QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret, true);
+
+// Variants SDK types for Survey Question
+var iosType =     'iOSSDK',
+		androidType = 'AndroidSDK',
+		jsType =      'JSSDK';
+// Choose SDK type to load Survey Question
+var typeSDK = jsType;

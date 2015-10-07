@@ -14,13 +14,6 @@ QB.createSession(QBUser, function(err, result){
 	}
 });
 
-// Variants SDK types for Survey Question
-var iosType = 'iOSSDK',
-		androidType = 'AndroidSDK',
-		jsType = 'JSSDK';
-// Choose SDK type to load Survey Question
-var typeSDK = jsType;
-
 // Get Survey Question from Cusmom Objects
 function getSurveyQuestion() {
 	// Add sort by orderand SDK type for filter

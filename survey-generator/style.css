@@ -5,13 +5,13 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,a {font-family: 'Open Sans', sans-serif; 
 h1,h2,h3,h4,h5,h6 {font-weight: 600;}
 a, a:focus, a:hover {text-decoration: none !important;}
 ul, ol {margin-bottom: 0px !important;}
-.wrapper {position: relative; min-height: 100%;}
 
 html {
     position: relative;
     min-height: 100%;
     display: block;
 }
+
 body {
   padding-bottom: 255px;
 }
@@ -508,4 +508,5 @@ body {
   text-align: center;
   color: #757575;
   margin-top: 20px;
+  display: none;
 }

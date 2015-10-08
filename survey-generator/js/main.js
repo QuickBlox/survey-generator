@@ -1,3 +1,6 @@
+var answerArray = [],
+		toNext;
+
 // Create session
 QB.createSession(QBUser, function(err, result){
 	if (err) {
@@ -33,7 +36,8 @@ function getSurveyQuestion() {
 			}
 
 			// Adds a buttom "NEXT" which show popup window confirmation
-			$('.co_form').append('<button id="co_next" type="button" value="NEXT" class="btn btn-lg col-xs-4 col-xs-offset-4" data-toggle="modal" data-target=".bs-example-modal-md">NEXT</button>');
+			$('.co_form').append('<button id="co_next" type="button" value="NEXT" class="btn btn-lg col-xs-4 col-xs-offset-4"'+
+													 ' data-target=".bs-example-modal-md" onclick="getAnswerInfo(true)">NEXT</button>');
 
 			// Remove the check from the choices, if the alternative text
 			$('.co_text_answer.for_other').on("click", function() {
@@ -60,7 +64,8 @@ function showSurveyQuestion(question, answers, alternative, j) {
 	if (answers) {
 		for (var i=answers.length; i > 0; i--) {
 			var answer = answers[answers.length-i],
-					checkboxHtml = $('<div class="co_checkbox"><input id="co_switch_'+i+j+'" type="radio" class="co_switch" name="co_switch_'+j+'"></div>'),
+					checkboxHtml = $('<div class="co_checkbox"><input id="co_switch_'+i+j+
+													 '" type="radio" class="co_switch" name="co_switch_'+j+'"></div>'),
 					checkHtml = $('<label for="co_switch_'+i+j+'" class="co_check"></label>');
 
 			checkHtml.html(answer);
@@ -80,12 +85,32 @@ function showSurveyQuestion(question, answers, alternative, j) {
 	}
 }
 
+function getAnswerInfo(validation) {
+	$('.co_survey').each(function(i, elem) {
+		var selectedString = $(elem).children('div.co_checkbox').children('input.co_switch:checked').next('label.co_check').text(),
+				writtenString = $(elem).children('textarea.co_text_answer').val();
+
+		answerString = (writtenString === undefined || '') ? selectedString : (selectedString === '') ? writtenString : selectedString;
+
+		if (validation === true) {
+			if (answerString === '') {
+				alert('Please answer all questions');
+				toNext = false;
+				return false;
+			} else {
+				toNext = true;
+				$('#co_next').attr('data-toggle', 'modal');
+			}
+		} else {
+			answerArray.push(answerString);
+		}
+	});
+}
+
 // Submit Survey Answer
 function submitSurveyAnswer() {
 	var coName = $('#co_name').val().trim(),
-			coEmail = $('#co_email').val().trim(),
-			answerArray = [],
-			toNext;
+			coEmail = $('#co_email').val().trim();
 
 	// Not to send if the fields are empty
 	if (coName === '' && coEmail === '') {
@@ -96,26 +121,16 @@ function submitSurveyAnswer() {
 		$('#co_email').focus();
 	} else {
 		// Building array from answers
-		$('.co_survey').each(function(i, elem) {
-			var selectedString = $(elem).children('div.co_checkbox').children('input.co_switch:checked').next('label.co_check').text(),
-					writtenString = $(elem).children('textarea.co_text_answer').val();
-
-			answerString = (writtenString === undefined || '') ? selectedString : (selectedString === '') ? writtenString : selectedString;
-			if (answerString === '') {
-				alert('Please answer all questions');
-				toNext = false;
-				return false;
-			} else {
-				toNext = true;
-			}
-			answerArray.push(answerString);
-		});
+		getAnswerInfo();
 
 		if (toNext === false) {
 			alert('Please answer all questions');
 		} else {
 			// Sends the information for create Survey Answer
-			$('#processLoader').fadeIn(0);
+			$('.co_main_h').fadeOut(1000);
+			$('.co_survey').fadeOut(1000);
+			$('#co_next').fadeOut(1000);
+			$('#processLoader').fadeIn(750);
 			createSurveyAnswer(coName, coEmail, answerArray);
 		}
 
@@ -141,8 +156,8 @@ function createSurveyAnswer(coName, coEmail, answerArray) {
 		} else {
 			console.log(res);
 			// Remove loading animation and show "Thank You!"
-			$('#processLoader').delay(0).fadeOut(0);
-			$('.co_form').html('<h1 class="co_finish">Thank You!</h1>');
+			$('#processLoader').delay(750).fadeOut(750);
+			$('.co_finish').delay(1500).fadeIn(750);
 		}
 	});
 }

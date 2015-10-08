@@ -438,6 +438,7 @@ body {
   color: #757575;
   margin-top: 35px;
   margin-bottom: 35px;
+  display: none;
 }
 
 .co_quest_h {
@@ -461,6 +462,7 @@ body {
 }
 
 .co_survey {
+  display: none;
   margin-bottom: 40px;
 }
 
@@ -468,6 +470,7 @@ body {
   background-color: #FF4236;
   color: #FFFFFF;
   letter-spacing: 1.5px;
+  display: none;
 } #co_next:hover {background-color: #CF3424}
 
 #processLoader {

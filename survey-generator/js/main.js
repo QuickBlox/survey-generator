@@ -93,12 +93,8 @@ function submitSurveyAnswer() {
 			coEmail = $('#co_email').val().trim();
 
 	// Not to send if the fields are empty
-	if (coName === '' && coEmail === '') {
+	if (coName === '') {
 		$('#co_name').focus();
-	} else if (coName === '') {
-		$('#co_name').focus();
-	} else if (coEmail === '') {
-		$('#co_email').focus();
 	} else {
 		var answerArray = [];
 

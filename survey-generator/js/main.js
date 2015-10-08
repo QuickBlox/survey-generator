@@ -36,9 +36,11 @@ function getSurveyQuestion() {
 			$('.co_form').append('<button id="co_next" type="button" value="NEXT" class="btn btn-lg col-xs-4 col-xs-offset-4"'+
 													 ' data-toggle="modal" data-target=".bs-example-modal-md">NEXT</button>');
 
+			// Some animation to show Survey Question content
 			$('.co_main_h').delay(1001).fadeIn(1000);
 			$('.co_survey').delay(1001).fadeIn(1000);
 			$('#co_next').delay(1001).fadeIn(1000);
+
 			// Remove the check from the choices, if the alternative text
 			$('.co_text_answer.for_other').on("click", function() {
 				var childArr = $(this).siblings('div.co_checkbox');
@@ -109,11 +111,13 @@ function submitSurveyAnswer() {
 			answerArray.push(answerString);
 		});
 
-		// Sends the information for create Survey Answer
+		// Some animation to hide Survey Question content and show loader
 		$('.co_main_h').fadeOut(1000);
 		$('.co_survey').fadeOut(1000);
 		$('#co_next').fadeOut(1000);
 		$('#processLoader').fadeIn(1000);
+
+		// Sends the information for create Survey Answer
 		createSurveyAnswer(coName, coEmail, answerArray);
 
 		// Close popup and show loader animation while sending information

@@ -9,7 +9,7 @@ QB.createSession(QBUser, function(err, result){
 		getSurveyQuestion();
 
 		// Show loader animation while content is loading
-		$('#processLoader').delay(250).fadeOut(750);
+		$('#processLoader').delay(250).fadeOut(500);
 	}
 });
 
@@ -37,9 +37,9 @@ function getSurveyQuestion() {
 													 ' data-toggle="modal" data-target=".bs-example-modal-md">NEXT</button>');
 
 			// Some animation to show Survey Question content
-			$('.co_main_h').delay(1001).fadeIn(1000);
-			$('.co_survey').delay(1001).fadeIn(1000);
-			$('#co_next').delay(1001).fadeIn(1000);
+			$('.co_main_h').delay(751).fadeIn(750);
+			$('.co_survey').delay(751).fadeIn(750);
+			$('#co_next').delay(751).fadeIn(750);
 
 			// Remove the check from the choices, if the alternative text
 			$('.co_text_answer.for_other').on("click", function() {
@@ -112,10 +112,10 @@ function submitSurveyAnswer() {
 		});
 
 		// Some animation to hide Survey Question content and show loader
-		$('.co_main_h').fadeOut(1000);
-		$('.co_survey').fadeOut(1000);
-		$('#co_next').fadeOut(1000);
-		$('#processLoader').fadeIn(1000);
+		$('.co_main_h').fadeOut(750);
+		$('.co_survey').fadeOut(750);
+		$('#co_next').fadeOut(750);
+		$('#processLoader').fadeIn(500);
 
 		// Sends the information for create Survey Answer
 		createSurveyAnswer(coName, coEmail, answerArray);
@@ -143,7 +143,7 @@ function createSurveyAnswer(coName, coEmail, answerArray) {
 			console.log(res);
 			// Remove loading animation and show "Thank You!"
 			$('#processLoader').delay(250).fadeOut(750);
-			$('.co_finish').delay(2000).fadeIn(1500);
+			$('.co_finish').delay(1501).fadeIn(750);
 		}
 	});
 }

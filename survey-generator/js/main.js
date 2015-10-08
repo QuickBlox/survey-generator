@@ -156,8 +156,8 @@ function createSurveyAnswer(coName, coEmail, answerArray) {
 		} else {
 			console.log(res);
 			// Remove loading animation and show "Thank You!"
-			$('#processLoader').delay(750).fadeOut(750);
-			$('.co_finish').delay(1500).fadeIn(750);
+			$('#processLoader').delay(250).fadeOut(750);
+			$('.co_finish').delay(2000).fadeIn(1500);
 		}
 	});
 }

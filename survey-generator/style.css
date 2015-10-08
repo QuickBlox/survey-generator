@@ -471,9 +471,9 @@ body {
 } #co_next:hover {background-color: #CF3424}
 
 #processLoader {
-  margin: 80px auto;
-  width: 128px;
-  height: 128px;
+  margin: 50px auto;
+  width: 125px;
+  height: 125px;
 }
 
 .modal-dialog.modal-md {

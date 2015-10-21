@@ -29,6 +29,7 @@ If you want to build your own Survey, please do the following:
   -question: String. Question
   -answers: Array of strings. Answers.
   -has_alternative_answer: Bool. Will be true if the question has an alternative answer (textarea)
+  -order: Integer. Order of the question.
 </pre>
 <pre>
  Name: SurveyAnswer

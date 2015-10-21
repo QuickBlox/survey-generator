@@ -39,5 +39,5 @@ If you want to build your own Survey, please do the following:
 </li>
 <li>Fill <b>QUESTIONS_CLASS_NAME</b> and <b>ANSWERS_CLASS_NAME</b> variables in <b>config.js</b> file.</li>
 <li>Add some data to these classes.</li>
-<li>Fill <b>typeSDK</b> variable in <b>config.js</b> file. It shoulb be equeal to a values of <b>type</b> field in your classes.</li>
+<li>Fill <b>typeSDK</b> variable in <b>config.js</b> file. It should be equal to a value of <b>type</b> field in your classes.</li>
  </ol>

@@ -17,7 +17,7 @@ If you want to build your own Survey, please do the following:
 <li>Create a new app</li>
 <li>Click on the app title in the list to reveal the app details:
    ![App credentials](https://cloud.githubusercontent.com/assets/373137/10630906/fdfc8156-77e2-11e5-82e7-fa50ab5e4f6f.png)</li>
-<li>Copy credentials (App ID, Authorization key, Authorization secret) into **config.js** file.</li>
+<li>Copy credentials (App ID, Authorization key, Authorization secret) into <b>config.js</b> file.</li>
 <li>In order to post any answers you have to create a user. Go to **Users** module, click **Add new users**, enter login and password and also copy them into **config.js** file.</li>
 <li>Next step is to create 2 classes in **Custom Objects** module to store survey's questions and answers. Go to **Custom** module, click **Add new class** and create 2 classes with the following schema:
  
@@ -29,12 +29,12 @@ If you want to build your own Survey, please do the following:
   -answers: Array of strings. Answers.
   -has_alternative_answer: Bool. Will be true if the question has an alternative answer (textarea)
 </pre>
-```xml
+<pre>
  Name: SurveyAnswer
  Fields:
   -type: String. Type of survey
   -answers: Array of strings. Answers.
-```
+</pre>
 </li>
 <li>Fill **QUESTIONS_CLASS_NAME** and **ANSWERS_CLASS_NAME** variables in **config.js** file.</li>
 <li>Add some data to these classes.</li>

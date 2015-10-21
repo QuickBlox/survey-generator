@@ -11,7 +11,7 @@ http://quickblox.github.io/survey-generator
 If you want to build your own Survey, please do the following:
 
 <ul>
-<li>Download the project from here.</li>
+<oi>Download the project from here.</oi>
  2. Register a QuickBlox account (if you don't have one yet): http://admin.quickblox.com/register
  3. Log in to QuickBlox admin panel http://admin.quickblox.com/signin
  4. Create a new app

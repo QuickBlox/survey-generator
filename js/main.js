@@ -128,7 +128,7 @@ function createSurveyAnswer(coName, coEmail, answerArray) {
 		type:      typeSDK,
 		full_name: coName,
 		email:     coEmail,
-		answer:    answerArray
+		answers:    answerArray
 	};
 
 	// Create recorde in "SurveyAnswer" class

@@ -27,5 +27,11 @@ If you want to build your own Survey, please do the following:
   -answers: Array of strings. Answers.
   -has_alternative_answer: Bool. Will be true if the question has an alternative answer (textarea)
 ```
+```xml
+ Name: SurveyAnswer
+ Fields:
+  -type: String. Type of survey
+  -answers: Array of strings. Answers.
+```
 
  9. Enjoy!

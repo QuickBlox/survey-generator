@@ -6,7 +6,7 @@ An elegant ready-to-go survey application.
 # Demo
 http://quickblox.github.io/survey-generator
 
-# How to build your own Survey
+# How to build your own Survey application
 
 If you want to build your own Survey, please do the following:
 

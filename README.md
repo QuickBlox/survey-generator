@@ -1,5 +1,7 @@
 QuickBlox Survey Generator
-=======
+
+# Demo
+http://quickblox.github.io/survey-generator
 
 # How to build your own Survey
 

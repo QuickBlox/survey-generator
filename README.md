@@ -1,6 +1,8 @@
 QuickBlox Survey Generator
 =====
 
+An elegant ready-to-go survey application.
+
 # Demo
 http://quickblox.github.io/survey-generator
 

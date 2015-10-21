@@ -20,6 +20,7 @@ If you want to build your own Survey, please do the following:
 <li>Copy credentials (App ID, Authorization key, Authorization secret) into **config.js** file.</li>
 <li>In order to post any answers you have to create a user. Go to **Users** module, click **Add new users**, enter login and password and also copy them into **config.js** file.</li>
 <li>Next step is to create 2 classes in **Custom Objects** module to store survey's questions and answers. Go to **Custom** module, click **Add new class** and create 2 classes with the following schema:
+ 
  ```xml
  Name: SurveyQuestion
  Fields:
@@ -33,7 +34,8 @@ If you want to build your own Survey, please do the following:
  Fields:
   -type: String. Type of survey
   -answers: Array of strings. Answers.
-```</li>
+```
+</li>
 <li>Fill **QUESTIONS_CLASS_NAME** and **ANSWERS_CLASS_NAME** variables in **config.js** file.</li>
 <li>Add some data to these classes.</li>
 <li>Fill **typeSDK** variable in **config.js** file. It shoulb be equeal to a values of **type** field in your classes.</li>

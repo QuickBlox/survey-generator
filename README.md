@@ -18,8 +18,8 @@ If you want to build your own Survey, please do the following:
 <li>Click on the app title in the list to reveal the app details:
    ![App credentials](https://cloud.githubusercontent.com/assets/373137/10630906/fdfc8156-77e2-11e5-82e7-fa50ab5e4f6f.png)</li>
 <li>Copy credentials (App ID, Authorization key, Authorization secret) into <b>config.js</b> file.</li>
-<li>In order to post any answers you have to create a user. Go to **Users** module, click **Add new users**, enter login and password and also copy them into **config.js** file.</li>
-<li>Next step is to create 2 classes in **Custom Objects** module to store survey's questions and answers. Go to **Custom** module, click **Add new class** and create 2 classes with the following schema:
+<li>In order to post any answers you have to create a user. Go to <b>Users</b> module, click <b>Add new users</b>, enter login and password and also copy them into <b>config.js</b> file.</li>
+<li>Next step is to create 2 classes in <b>Custom Objects</b> module to store survey's questions and answers. Go to <b>Custom</b> module, click <b>Add new class</b> and create 2 classes with the following schema:
  
 <pre>
  Name: SurveyQuestion
@@ -36,7 +36,7 @@ If you want to build your own Survey, please do the following:
   -answers: Array of strings. Answers.
 </pre>
 </li>
-<li>Fill **QUESTIONS_CLASS_NAME** and **ANSWERS_CLASS_NAME** variables in **config.js** file.</li>
+<li>Fill <b>QUESTIONS_CLASS_NAME</b> and <b>ANSWERS_CLASS_NAME</b> variables in <b>config.js</b> file.</li>
 <li>Add some data to these classes.</li>
-<li>Fill **typeSDK** variable in **config.js** file. It shoulb be equeal to a values of **type** field in your classes.</li>
+<li>Fill <b>typeSDK</b> variable in <b>config.js</b> file. It shoulb be equeal to a values of <b>type</b> field in your classes.</li>
  </ol>

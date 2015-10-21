@@ -36,6 +36,8 @@ If you want to build your own Survey, please do the following:
  Fields:
   -type: String. Type of survey
   -answers: Array of strings. Answers.
+  -full_name: String. Full name of a user
+  -email: String. Email name of a user
 </pre>
 </li>
 <li>Fill <b>QUESTIONS_CLASS_NAME</b> and <b>ANSWERS_CLASS_NAME</b> variables in <b>config.js</b> file.</li>

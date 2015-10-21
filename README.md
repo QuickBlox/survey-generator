@@ -19,12 +19,13 @@ If you want to build your own Survey, please do the following:
  6. Copy credentials (App ID, Authorization key, Authorization secret) into **config.js** file.
  7. In order to post any answers you have to create a user. Go to **Users** module, click **Add new users**, enter login and password and also copy them into **config.js** file.
  8. Next step is to create 2 classes in **Custom Objects** module to store survey's questions and answers. Go to **Custom** module, click **Add new class** and create 2 classes with the following schema:
-
-    **Name**: SurveyQuestion
-    **Fields**:
-    **-type**: String. Type of survey
-    **-question**: String. Question
-    **-answers**: Array of strings. Answers.
-    **-has_alternative_answer**: Bool. Will be true if the question has an alternative answer (textarea)
+```xml
+ **Name**: SurveyQuestion
+ **Fields**:
+ **-type**: String. Type of survey
+ **-question**: String. Question
+ **-answers**: Array of strings. Answers.
+ **-has_alternative_answer**: Bool. Will be true if the question has an alternative answer (textarea)
+```
 
  9. Enjoy!
